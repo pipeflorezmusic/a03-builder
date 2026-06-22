@@ -1,4 +1,5 @@
 name: Custom Rom Builder Samsung Galaxy A03
+
 permissions:
   contents: write
 
@@ -45,7 +46,7 @@ jobs:
         run: |
           cd lpbinary/binary
           wget "${{ github.event.inputs.GSI }}"
-          mkdir sys
+          mkdir -p sys
           mv *.xz sys
           cd sys
           unxz *.xz
@@ -68,9 +69,9 @@ jobs:
         run: |
           cd lpbinary/binary
           tar -cvf super.tar super.img
-          rm -rf super.img
+          rm -f super.img
           7z a "${{ github.event.inputs.NAME }}" super.tar
-          rm -rf super.tar
+          rm -f super.tar
 
       - name: Upload to Release
         uses: softprops/action-gh-release@v1
