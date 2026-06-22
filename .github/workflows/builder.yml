@@ -22,7 +22,7 @@ on:
         VENDOR:
               description: 'Enter Direct Link Of Your Version Vendor'
               required: true
-              default: 'https://sourceforge.net/projects/a03-files/files/A035FXXU4CWI1/vendor.img'
+              default: 'https://github.com/pipeflorezmusic/a03-builder/releases/download/v1.0/vendor.img'
 jobs:
   Build:
     runs-on: ubuntu-latest
